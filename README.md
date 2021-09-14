@@ -6,4 +6,4 @@ Essa plataforma mostrará a pontuação de cada casa baseado no histórico de po
 
 Para atribuir ou retirar pontos de uma casa, basta procurar o aluno por casa e atribuir ou remover pontos.
 
-[Demo](https://hogwarts-score-manager-nu.vercel.app/)
+[Demo](https://hogwarts-six.vercel.app/)
