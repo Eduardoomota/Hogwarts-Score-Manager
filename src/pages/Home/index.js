@@ -1,8 +1,5 @@
-// COMPONENTS
 import HousesList from "../../components/HousesList";
 
-const Home = () => {
-  return <HousesList />;
-};
+const Home = () => <HousesList />;
 
 export default Home;

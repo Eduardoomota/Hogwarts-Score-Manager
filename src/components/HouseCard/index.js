@@ -1,26 +1,23 @@
 import { useHistory } from "react-router-dom";
 
-// STYLES
-import { Card, CardDescription } from "./styles";
+import * as S from "./styles";
 
-const HouseCard = ({ house }) => {
+const HouseCard = ({ house: { name, id, image, points } }) => {
   const history = useHistory();
 
-  const editHouse = (houseName) => {
-    history.push(`/houses/${houseName}`);
-  };
+  const editHouse = (houseName) => history.push(`/houses/${houseName}`);
 
   return (
-    <Card onClick={() => editHouse(house.name)}>
+    <S.Card onClick={() => editHouse(name)}>
       <h2>
-        #{house.id} {house.name}
+        #{id} {name}
       </h2>
 
-      <img src={house.image} alt={`${house.name} House`} />
-      <CardDescription>
-        <span>{house.points} Points</span>
-      </CardDescription>
-    </Card>
+      <img src={image} alt={`${name} House`} />
+      <S.CardDescription>
+        <span>{points} Points</span>
+      </S.CardDescription>
+    </S.Card>
   );
 };
 

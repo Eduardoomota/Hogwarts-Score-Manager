@@ -2,23 +2,21 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useLoading, Puff } from "@agney/react-loading";
 
-// COMPONENTS
 import StudentsList from "../StudentsList";
 import Modal from "../Modal";
 
-// STYLES
-import { Container, Button } from "./styles";
+import * as S from "./styles";
 
 const Students = ({ students }) => {
   const [open, setOpen] = useState(false);
   const [student, setStudent] = useState({});
 
+  const history = useHistory();
+
   const { indicatorEl } = useLoading({
     loading: true,
     indicator: <Puff width="50" />,
   });
-
-  const history = useHistory();
 
   const setModal = (student) => {
     setOpen(true);
@@ -26,8 +24,8 @@ const Students = ({ students }) => {
   };
 
   return (
-    <Container>
-      <Button onClick={() => history.push("/")}>Back to Houses</Button>
+    <S.Container>
+      <S.Button onClick={() => history.push("/")}>Back to Houses</S.Button>
       {students.length === 0 ? (
         indicatorEl
       ) : (
@@ -35,7 +33,7 @@ const Students = ({ students }) => {
       )}
 
       {open && <Modal setOpen={setOpen} student={student} />}
-    </Container>
+    </S.Container>
   );
 };
 

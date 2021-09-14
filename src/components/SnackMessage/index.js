@@ -1,24 +1,13 @@
-import { useCallback } from "react";
-
-// STYLES
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 
 const SnackMessage = ({ open = false, setOpen }) => {
-  const Alert = (props) => {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
-  };
-
-  const handleClose = useCallback(
-    (event, reason) => {
-      if (reason === "clickaway") {
-        return;
-      }
-
-      setOpen(false);
-    },
-    [setOpen]
+  const Alert = (props) => (
+    <MuiAlert elevation={6} variant="filled" {...props} />
   );
+
+  const handleClose = (_event, reason) =>
+    reason !== "clickaway" ? setOpen(false) : null;
 
   return (
     open && (

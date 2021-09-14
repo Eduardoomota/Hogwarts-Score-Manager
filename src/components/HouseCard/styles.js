@@ -17,11 +17,12 @@ export const Card = styled.li`
   margin-bottom: 30px;
 
   @media (max-width: 1400px) {
-    width: 30%;
+    margin-bottom: 105px;
+    width: 45%;
   }
 
-  @media (max-width: 1400px) {
-    width: 45%;
+  @media (max-width: 992px) {
+    margin-bottom: 60px;
   }
 
   @media (max-width: 768px) {

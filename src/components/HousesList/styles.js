@@ -9,14 +9,16 @@ export const Container = styled.div`
 
   @media (max-width: 1400px) {
     height: auto;
+    min-height: calc(100vh - 125.89px);
   }
 
   ul {
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
+    width: 100%;
 
-    @media (max-width: 1400px) {
+    @media (max-width: 768px) {
       justify-content: center;
     }
   }

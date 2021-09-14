@@ -1,22 +1,20 @@
 import { useSelector } from "react-redux";
 
-// COMPONENTS
 import HouseCard from "../HouseCard";
 
-// STYLES
-import { Container } from "./styles";
+import * as S from "./styles";
 
 const HousesList = () => {
   const houses = useSelector(({ houses }) => houses);
 
   return (
-    <Container>
+    <S.Container>
       <ul>
         {houses.map((house, index) => (
           <HouseCard key={index} house={house} />
         ))}
       </ul>
-    </Container>
+    </S.Container>
   );
 };
 export default HousesList;

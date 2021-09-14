@@ -1,35 +1,25 @@
-// COMPONENTS
 import GainOrLose from "../GainOrLose";
 
-// STYLES
-import {
-  Card,
-  Container,
-  CardHeader,
-  CardImage,
-  CardDescription,
-} from "./styles";
+import * as S from "./styles";
 import { GrClose } from "react-icons/gr";
 
-const Modal = ({ setOpen, student }) => {
-  return (
-    <Container>
-      <Card>
-        <CardHeader>
-          <h3>{student.name}</h3>
-          <button onClick={() => setOpen(false)}>
-            <GrClose />
-          </button>
-        </CardHeader>
+const Modal = ({ setOpen, student }) => (
+  <S.Container>
+    <S.Card>
+      <S.CardHeader>
+        <h3>{student.name}</h3>
+        <button onClick={() => setOpen(false)}>
+          <GrClose />
+        </button>
+      </S.CardHeader>
 
-        <CardImage src={student.image} alt="" />
+      <S.CardImage src={student.image} alt="" />
 
-        <CardDescription>
-          <GainOrLose />
-        </CardDescription>
-      </Card>
-    </Container>
-  );
-};
+      <S.CardDescription>
+        <GainOrLose />
+      </S.CardDescription>
+    </S.Card>
+  </S.Container>
+);
 
 export default Modal;
